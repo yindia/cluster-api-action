@@ -1,0 +1,62 @@
+name: 'cluster api action'
+author: 'Yuvraj <evalsocket@protonmail.com>'
+description: 'github action for deploying clusterapi'
+icon: activity
+inputs:
+  kubeconfig:
+    description: 'Kubernetes Config'
+    required: false
+    default: ''
+  context:
+    description: 'If your kubeconfig has multiple contexts, use this field to use a specific context, otherwise the default one would be chosen'
+    required: false
+    default: ''
+  k8s-url:
+    description: 'Cluster Url'
+    required: false
+    default: ''
+  k8s-secret:
+    description: 'Service account token'
+    required: false
+    default: ''
+  capi-provider:
+    description: 'cluster api provider name'
+    required: false
+    default: 'aws'
+  capi-provider-version:
+    description: 'cluster api provider version'
+    required: false
+    default: ''
+  capi-provider-defination:
+    description: 'cluster api provider defination file path'
+    required: false
+    default: ''
+  capi-version:
+    description: 'cluster api version'
+    required: false
+    default: ''
+  capi-defination:
+    description: 'cluster api defination file path'
+    required: false
+    default: ''
+  cert-defination:
+    description: 'cert-manager defination file'
+    required: false
+    default: ''
+  secret:
+    description: 'cloud provider secret. You can add base64/string as per cloud provder'
+    required: false
+    default: ''
+  username:
+    description: 'vsphere username'
+    required: false
+    default: ''
+  password:
+    description: 'vsphere password'
+    required: false
+    default: ''
+branding:
+  color: 'green' # optional, decorates the entry in the GitHub Marketplace
+runs:
+  using: 'node12'
+  main: 'lib/index.js'

@@ -1,0 +1,23 @@
+name: Master
+
+on:
+  push:
+    branches:
+      - '*'
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Example CAPI Provder AWS Setup
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # for demo setup kind cluster. In production you will use your managed cluster
+      - uses: engineerd/setup-kind@v0.4.0
+      # Install CAPI Provider
+      - uses: evalsocket/cluster-api-action@v0.0.2
+        with:
+          kubeconfig: ${KUBECONFIG}
+          capi-provider: 'aws'
+          capi-provider-version: 'v0.6.0'
+          capi-version : 'v0.3.9'
+        id: capi-aws

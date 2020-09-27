@@ -1,0 +1,15 @@
+# action.yaml
+name: 'Clusterctl github Action'
+author: 'Yuvraj <evalsocket@protonmail.com>'
+description: 'Github action for clusterctl '
+branding:
+  icon: 'anchor'
+  color: 'blue'
+inputs:
+  clusterctl_version:
+    description: 'clusterctl version'
+    required: true
+    default: ''
+runs:
+  using: 'node12'
+  main: 'lib/index.js'
