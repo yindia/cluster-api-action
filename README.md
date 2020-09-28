@@ -53,3 +53,11 @@ Note : Under development
     secret : 'YXNkYmhqdmFz'
   id: capi-vsphere
 ```
+
+4. Clusterctl Action
+```
+- uses: evalsocket/cluster-api-actions/clusterctl@master
+  with:
+    clusterctl_version : 'v0.3.9'
+  id: clusterctl
+```
